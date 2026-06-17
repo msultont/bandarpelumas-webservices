@@ -41,10 +41,20 @@ app.get("/", async (req: Request, res: Response) => {
     }: UseragentProperties = (req as Request).useragent || {};
 
     console.log(
-        `Received a ${isMobile ? "Mobile" : "Desktop"} request from ${browser} at ${new Date().toISOString()}`,
+        `Received a ${isMobile ? "Mobile" : "Desktop"} request from ${browser} at ${new Date().toISOString()}`
     );
 
-    res.status(200).json({ message: `Hello, World!` });
+    res.status(200).json({
+        message: `Hello, World!`,
+        userAgent: {
+            isMobile,
+            isDesktop,
+            isBot,
+            browser,
+            os,
+            platform,
+        },
+    });
 });
 
 app.post("/", async (req: Request, res: Response) => {
