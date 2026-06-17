@@ -12,8 +12,23 @@
 
 .header-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+.nav-left {
+  position: absolute;
+  left: 0;
+}
+
+.nav-right {
+  position: absolute;
+  right: 0;
 }
 
 .logo a {
@@ -50,7 +65,17 @@
 }
 
 @media (max-width: 768px) {
-  .nav {
+  .header-content {
+    justify-content: center;
+  }
+
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .nav-left.open,
+  .nav-right.open {
     flex-direction: column;
     gap: 1rem;
     position: absolute;
@@ -60,20 +85,12 @@
     background: #fff;
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .nav.open {
-    max-height: 300px;
+    display: flex;
   }
 
   .menu-toggle {
     display: block;
-  }
-
-  .header-content {
-    position: relative;
+    position: absolute;
+    right: 0;
   }
 }
