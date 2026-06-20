@@ -1,7 +1,19 @@
 {
 	"folders": [
 		{
-			"path": "."
-		}
-	]
+			"path": "./backend",
+		},
+		{
+			"path": "./frontend",
+		},
+	],
+	"settings": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "always",
+		},
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"eslint.validate": ["typescript", "typescriptreact"],
+		"eslint.workingDirectories": [{ "mode": "auto" }],
+	},
 }
