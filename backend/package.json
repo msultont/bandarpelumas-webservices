@@ -1,29 +1,35 @@
 {
-    "name": "bandarpelumas-webservices",
-    "version": "0.0.1",
-    "dependencies": {
-        "express": "^5.2.1",
-        "express-useragent": "^2.2.0"
-    },
-    "devDependencies": {
-        "@types/express": "^5.0.6",
-        "@types/express-useragent": "^1.0.5",
-        "@types/jest": "^30.0.0",
-        "@types/node": "^25.9.2",
-        "@types/supertest": "^7.2.0",
-        "jest": "^30.4.2",
-        "supertest": "^7.2.2",
-        "ts-jest": "^29.4.11",
-        "typescript": "^6.0.3"
-    },
-    "main": "index.js",
-    "scripts": {
-        "start": "node dist/server.js",
-        "build": "npx tsc",
-        "test": "jest"
-    },
-    "keywords": [],
-    "author": "Muhammad Sulton Tauhid",
-    "license": "MIT",
-    "description": ""
+	"name": "bandarpelumas-webservices",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "^5.2.1",
+		"express-useragent": "^2.2.0",
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@types/express": "^5.0.6",
+		"@types/express-useragent": "^1.0.5",
+		"@types/jest": "^30.0.0",
+		"@types/node": "^25.9.2",
+		"@types/supertest": "^7.2.0",
+		"@typescript-eslint/eslint-plugin": "^8.61.1",
+		"@typescript-eslint/parser": "^8.61.1",
+		"eslint": "^10.5.0",
+		"jest": "^30.4.2",
+		"supertest": "^7.2.2",
+		"ts-jest": "^29.4.11",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.61.1"
+	},
+	"main": "index.js",
+	"scripts": {
+		"start": "node dist/server.js",
+		"build": "npx tsc",
+		"test": "jest"
+	},
+	"keywords": [],
+	"author": "Muhammad Sulton Tauhid",
+	"license": "MIT",
+	"description": ""
 }
