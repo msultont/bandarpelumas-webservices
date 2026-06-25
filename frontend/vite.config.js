@@ -10,13 +10,12 @@ export default defineConfig({
 		strictPort: true,
 		proxy: {
 			"/api": {
-				// Use 127.0.0.1 instead of 'localhost' to bypass Node.js DNS resolution delays
-				target: "http://127.0.0.1:5173",
+				// Forward /api/* requests to the Express backend on port 3000
+				target: "http://127.0.0.1:3000",
 				changeOrigin: true,
 				secure: false,
-				// Optional: remove '/api' prefix before sending requests to backend
+				// Strip /api prefix before forwarding: /api → /
 				rewrite: (path) => path.replace(/^\/api/, ""),
-				// Optional: enable proxying websockets for real-time applications
 				ws: true,
 			},
 		},

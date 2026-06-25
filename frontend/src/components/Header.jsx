@@ -1,25 +1,32 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Header.css";
 
 const services = [
-	{ label: "Penjualan Pelumas", href: "/spareparts" },
-	{ label: "Sparepart", href: "/spareparts" },
-	{ label: "Coating & Detailing", href: "/spareparts" },
-	{ label: "Servis Berkala", href: "/spareparts" },
-	{ label: "Body Repair", href: "/spareparts" },
-	{ label: "Paket Servis", href: "/spareparts" },
+	{ label: "Penjualan Pelumas", href: "/pelumas" },
+	{ label: "Penjualan Sparepart", href: "/spareparts" },
+	{ label: "Coating & Detailing", href: "/coatingdetailing" },
+	{ label: "Servis Berkala", href: "/servis-berkala" },
+	{ label: "Body Repair", href: "/body-repair" },
+	{ label: "Paket Servis", href: "/paket-servis" },
 ];
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [servicesOpen, setServicesOpen] = useState(false);
+	const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
 	const servicesRef = useRef(null);
 
 	const handleNavClick = () => {
 		setIsOpen(false);
 		setServicesOpen(false);
 	};
+
+	// Track mobile viewport
+	useEffect(() => {
+		const handler = () => setIsMobile(window.innerWidth <= 768);
+		window.addEventListener("resize", handler);
+		return () => window.removeEventListener("resize", handler);
+	}, []);
 
 	// Close dropdown when clicking outside
 	useEffect(() => {
@@ -49,26 +56,26 @@ export default function Header() {
 						</Link>
 						<div
 							className={`services-dropdown ${servicesOpen ? "open" : ""}`}
-							ref={servicesRef}
+							ref={!isMobile ? servicesRef : null}
 						>
 							<button
 								className="services-trigger"
 								onClick={() => setServicesOpen((prev) => !prev)}
 								aria-expanded={servicesOpen}
 							>
-								Jasa Servis
+								Servis
 								<span className="chevron">▾</span>
 							</button>
 							<div className="services-drawer">
 								{services.map((s) => (
-									<a
+									<Link
 										key={s.label}
-										href={s.href}
+										to={s.href}
 										className="drawer-item"
 										onClick={handleNavClick}
 									>
 										{s.label}
-									</a>
+									</Link>
 								))}
 							</div>
 						</div>
@@ -92,9 +99,9 @@ export default function Header() {
 						<a href="/#blog" onClick={handleNavClick}>
 							Jurnal Bengkel
 						</a>
-						<a href="/#contact" onClick={handleNavClick}>
-							Kontak Kami
-						</a>
+						<Link to="/contact" onClick={handleNavClick}>
+							Kontak
+						</Link>
 					</nav>
 
 					<button
@@ -115,25 +122,26 @@ export default function Header() {
 					</Link>
 					<div
 						className={`services-dropdown mobile ${servicesOpen ? "open" : ""}`}
+						ref={isMobile ? servicesRef : null}
 					>
 						<button
 							className="services-trigger"
 							onClick={() => setServicesOpen((prev) => !prev)}
 							aria-expanded={servicesOpen}
 						>
-							Jasa Servis
+							Servis
 							<span className="chevron">▾</span>
 						</button>
 						<div className="services-drawer">
 							{services.map((s) => (
-								<a
+								<Link
 									key={s.label}
-									href={s.href}
+									to={s.href}
 									className="drawer-item"
 									onClick={handleNavClick}
 								>
 									{s.label}
-								</a>
+								</Link>
 							))}
 						</div>
 					</div>
@@ -143,9 +151,9 @@ export default function Header() {
 					<a href="/#blog" onClick={handleNavClick}>
 						Jurnal Bengkel
 					</a>
-					<a href="/#contact" onClick={handleNavClick}>
-						Kontak Kami
-					</a>
+					<Link to="/contact" onClick={handleNavClick}>
+						Kontak
+					</Link>
 				</div>
 			</div>
 		</header>

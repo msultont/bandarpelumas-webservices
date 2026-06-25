@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Blog from "../components/Blog";
-import "./Spareparts.css";
 
 /* ─── Data ─────────────────────────────────────────────── */
 
