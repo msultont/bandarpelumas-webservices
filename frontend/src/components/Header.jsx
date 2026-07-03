@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const services = [
-	{ label: "Penjualan Pelumas", href: "/pelumas" },
-	{ label: "Penjualan Sparepart", href: "/spareparts" },
-	{ label: "Coating & Detailing", href: "/coatingdetailing" },
-	{ label: "Servis Berkala", href: "/servis-berkala" },
-	{ label: "Body Repair", href: "/body-repair" },
-	{ label: "Paket Servis", href: "/paket-servis" },
+	{ label: "Penjualan Pelumas", href: "pelumas" },
+	{ label: "Penjualan Sparepart", href: "spareparts" },
+	{ label: "Coating & Detailing", href: "coatingdetailing" },
+	{ label: "Servis Berkala", href: "servis-berkala" },
+	{ label: "Body Repair", href: "body-repair" },
+	{ label: "Paket Servis", href: "paket-servis" },
 ];
 
 export default function Header() {
@@ -76,7 +76,7 @@ export default function Header() {
 								{services.map((s) => (
 									<Link
 										key={s.label}
-										to={s.href}
+										to={`${import.meta.env.BASE_URL}${s.href}`}
 										className="drawer-item"
 										onClick={handleNavClick}
 									>
