@@ -13,10 +13,22 @@ export default function App() {
 			<div className="app">
 				<Header />
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/spareparts" element={<Spareparts />} />
-					<Route path="/contact" element={<Contact />} />
+					<Route
+						path={`${import.meta.env.BASE_URL}`}
+						element={<Home />}
+					/>
+					<Route
+						path={`${import.meta.env.BASE_URL}about`}
+						element={<About />}
+					/>
+					<Route
+						path={`${import.meta.env.BASE_URL}spareparts`}
+						element={<Spareparts />}
+					/>
+					<Route
+						path={`${import.meta.env.BASE_URL}contact`}
+						element={<Contact />}
+					/>
 				</Routes>
 				<Footer />
 				<ScrollToTop />

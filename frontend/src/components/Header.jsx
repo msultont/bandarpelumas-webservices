@@ -48,10 +48,16 @@ export default function Header() {
 			<div className="container">
 				<div className="header-content">
 					<nav className={`nav nav-left ${isOpen ? "open" : ""}`}>
-						<Link to="/" onClick={handleNavClick}>
+						<Link
+							to={`${import.meta.env.BASE_URL}`}
+							onClick={handleNavClick}
+						>
 							Beranda
 						</Link>
-						<Link to="/about" onClick={handleNavClick}>
+						<Link
+							to={`${import.meta.env.BASE_URL}about`}
+							onClick={handleNavClick}
+						>
 							Tentang Kami
 						</Link>
 						<div
@@ -82,24 +88,34 @@ export default function Header() {
 					</nav>
 
 					<div className="logo">
-						<Link to="/">
+						<Link to={`${import.meta.env.BASE_URL}`}>
 							<img
-								src="/logo.png"
+								src={`${import.meta.env.BASE_URL}logo.png`}
 								alt="Bandar Pelumas Logo"
 								className="logo-img"
 							/>
+							{console.log(import.meta.env.BASE_URL)}
 							<span className="logo-text">Bandar Pelumas</span>
 						</Link>
 					</div>
 
 					<nav className={`nav nav-right ${isOpen ? "open" : ""}`}>
-						<a href="/#testimonials" onClick={handleNavClick}>
+						<a
+							href={`${import.meta.env.BASE_URL}#testimonials`}
+							onClick={handleNavClick}
+						>
 							Testimonials
 						</a>
-						<a href="/#blog" onClick={handleNavClick}>
+						<a
+							href={`${import.meta.env.BASE_URL}#blog`}
+							onClick={handleNavClick}
+						>
 							Jurnal Bengkel
 						</a>
-						<Link to="/contact" onClick={handleNavClick}>
+						<Link
+							to={`${import.meta.env.BASE_URL}contact`}
+							onClick={handleNavClick}
+						>
 							Kontak
 						</Link>
 					</nav>
@@ -114,10 +130,16 @@ export default function Header() {
 
 				{/* Unified Mobile Drawer */}
 				<div className={`mobile-nav ${isOpen ? "open" : ""}`}>
-					<Link to="/" onClick={handleNavClick}>
+					<Link
+						to={`${import.meta.env.BASE_URL}`}
+						onClick={handleNavClick}
+					>
 						Beranda
 					</Link>
-					<Link to="/about" onClick={handleNavClick}>
+					<Link
+						to={`${import.meta.env.BASE_URL}about`}
+						onClick={handleNavClick}
+					>
 						Tentang Kami
 					</Link>
 					<div
@@ -136,7 +158,7 @@ export default function Header() {
 							{services.map((s) => (
 								<Link
 									key={s.label}
-									to={s.href}
+									to={`${import.meta.env.BASE_URL}${s.href}`}
 									className="drawer-item"
 									onClick={handleNavClick}
 								>
@@ -145,13 +167,22 @@ export default function Header() {
 							))}
 						</div>
 					</div>
-					<a href="/#testimonials" onClick={handleNavClick}>
+					<a
+						href={`${import.meta.env.BASE_URL}#testimonials`}
+						onClick={handleNavClick}
+					>
 						Testimonials
 					</a>
-					<a href="/#blog" onClick={handleNavClick}>
+					<a
+						href={`${import.meta.env.BASE_URL}#blog`}
+						onClick={handleNavClick}
+					>
 						Jurnal Bengkel
 					</a>
-					<Link to="/contact" onClick={handleNavClick}>
+					<Link
+						to={`${import.meta.env.BASE_URL}contact`}
+						onClick={handleNavClick}
+					>
 						Kontak
 					</Link>
 				</div>
