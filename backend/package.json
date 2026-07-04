@@ -1,5 +1,6 @@
 {
-	"name": "bandarpelumas-webservices",
+	"name": "bandarpelumas-webservices-server",
+	"private": true,
 	"version": "0.0.1",
 	"dependencies": {
 		"express": "^5.2.1",
@@ -19,11 +20,13 @@
 		"jest": "^30.4.2",
 		"supertest": "^7.2.2",
 		"ts-jest": "^29.4.11",
+		"tsx": "^4.23.0",
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.61.1"
 	},
 	"main": "index.js",
 	"scripts": {
+		"dev": "tsx watch src/server.ts",
 		"start": "node dist/server.js",
 		"build": "npx tsc",
 		"test": "jest"

@@ -74,15 +74,32 @@ export {
 
 /* Middleware to parse JSON bodies */
 app.use(express.json());
-app.use(express.static("public")); // Serve static files from the "public" directory
 app.use(express.urlencoded({ extended: true }));
 app.use(useragent.express());
 app.set("trust proxy", true); // Trust the first proxy
 
+app.use((req: Request, _res: Response, next) => {
+	const { isMobile, isDesktop, isBot, browser }: UseragentProperties =
+		req.useragent || {};
+	const deviceType = isMobile
+		? "Mobile"
+		: isDesktop
+			? "Desktop"
+			: isBot
+				? "Bot"
+				: "Unknown";
+
+	console.log(
+		`Received a ${deviceType} ${req.method} request for ${req.originalUrl} from ${browser || "Unknown"} at ${new Date().toISOString()}`
+	);
+
+	next();
+});
+
+app.use(express.static("public")); // Serve static files from the "public" directory
+
 /* Basic Route */
 app.get("/", (req: Request, res: Response) => {
-	// Access useragent properties safely.
-	// Since express-useragent augments the request, we can destructure from req.useragent
 	const {
 		isMobile,
 		isDesktop,
@@ -92,11 +109,7 @@ app.get("/", (req: Request, res: Response) => {
 		platform,
 	}: UseragentProperties = req.useragent || {};
 
-	console.log(
-		`Received a ${isMobile ? "Mobile" : "Desktop"} request from ${browser} at ${new Date().toISOString()}`
-	);
-
-	res.status(200).json({
+	return res.status(200).json({
 		message: `Hello, World!`,
 		userAgent: {
 			isMobile,
@@ -111,10 +124,9 @@ app.get("/", (req: Request, res: Response) => {
 
 app.post("/", (req: Request<PostRequestBody>, res: Response) => {
 	try {
-		// Validate request body using Zod schema
 		const validatedBody = postRequestBodySchema.parse(req.body);
 
-		res.status(201).json({
+		return res.status(201).json({
 			message: `POST request received with message: ${validatedBody.message}`,
 			requestId: validatedBody.requestId,
 			source: validatedBody.source,
@@ -127,7 +139,7 @@ app.post("/", (req: Request<PostRequestBody>, res: Response) => {
 				details: error.issues,
 			});
 		}
-		res.status(500).json({
+		return res.status(500).json({
 			error: "Internal Server Error",
 			message: "An unexpected error occurred",
 		});
@@ -136,10 +148,9 @@ app.post("/", (req: Request<PostRequestBody>, res: Response) => {
 
 app.put("/", (req: Request, res: Response) => {
 	try {
-		// Validate request body using Zod schema
 		const validatedBody = postRequestBodySchema.parse(req.body);
 
-		res.status(200).json({
+		return res.status(200).json({
 			message: `PUT request received with message: ${validatedBody.message}`,
 			requestId: validatedBody.requestId,
 			source: validatedBody.source,
@@ -152,23 +163,20 @@ app.put("/", (req: Request, res: Response) => {
 				details: error.issues,
 			});
 		}
-		res.status(500).json({
+		return res.status(500).json({
 			error: "Internal Server Error",
 			message: "An unexpected error occurred",
 		});
 	}
 });
 
-/* POST /users - Create a new user */
 app.post("/users", (req: Request, res: Response) => {
 	try {
-		// Validate user data using Zod schema
 		const validatedUser: User = userSchema.parse(req.body);
 
-		// Generate a simple ID (in GREEN PHASE, minimal implementation)
 		const userId = Math.random().toString(36).substr(2, 9);
 
-		res.status(201).json({
+		return res.status(201).json({
 			message: "User created successfully",
 			id: userId,
 			user: validatedUser,
@@ -180,7 +188,7 @@ app.post("/users", (req: Request, res: Response) => {
 				details: error.issues,
 			});
 		}
-		res.status(500).json({
+		return res.status(500).json({
 			error: "Internal Server Error",
 			message: "An unexpected error occurred",
 		});

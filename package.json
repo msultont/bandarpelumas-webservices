@@ -1,0 +1,15 @@
+{
+	"name": "bandarpelumas-webservices",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"install:all": "npm --prefix frontend install && npm --prefix backend install",
+		"dev": "concurrently --names \"frontend,backend\" --prefix-colors \"cyan,yellow\" \"npm --prefix frontend run dev\" \"npm --prefix backend run dev\"",
+		"build": "npm --prefix frontend run build && npm --prefix backend run build",
+		"start": "concurrently --names \"frontend,backend\" --prefix-colors \"cyan,yellow\" \"npm --prefix frontend run preview\" \"npm --prefix backend start\"",
+		"test": "npm --prefix backend test"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.2"
+	}
+}
