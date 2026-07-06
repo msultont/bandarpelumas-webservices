@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express, { Application } from "express";
 import useragent from "express-useragent";
+import path from "path";
 import { requestLogger } from "./middleware/logger";
 import router from "./routes";
 
@@ -15,5 +16,5 @@ if (process.env.NODE_ENV === "production") {
 	app.set("trust proxy", "loopback"); // Trust loopback proxy in development
 }
 app.use(requestLogger);
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "../public")));
 app.use(router);
