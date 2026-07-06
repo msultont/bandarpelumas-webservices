@@ -3,6 +3,7 @@
 	"private": true,
 	"version": "0.0.1",
 	"dependencies": {
+		"cors": "^2.8.6",
 		"dotenv": "^17.4.2",
 		"express": "^5.2.1",
 		"express-useragent": "^2.2.0",
@@ -10,6 +11,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@types/cors": "^2.8.19",
 		"@types/express": "^5.0.6",
 		"@types/express-useragent": "^1.0.5",
 		"@types/jest": "^30.0.0",
