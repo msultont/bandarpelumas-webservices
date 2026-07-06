@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const services = [
-	{ label: "Penjualan Pelumas", href: "pelumas" },
-	{ label: "Penjualan Sparepart", href: "spareparts" },
+	{ label: "Marketplace", href: "marketplace" },
 	{ label: "Coating & Detailing", href: "coatingdetailing" },
-	{ label: "Servis Berkala", href: "servis-berkala" },
+	{ label: "Spesialis AC", href: "spesialis-ac" },
 	{ label: "Body Repair", href: "body-repair" },
 	{ label: "Paket Servis", href: "paket-servis" },
+	{ label: "Spooring & Balancing", href: "spooring-balancing" },
 ];
 
 export default function Header() {

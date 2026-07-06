@@ -77,10 +77,10 @@ export default function About() {
 			{/* Hero Section */}
 			<section className="about-hero">
 				<div className="container">
-					<h1>About Car Service</h1>
+					<h1>Tentang Bandar Pelumas</h1>
 					<p>
-						Your trusted partner for comprehensive automotive care
-						since 2002
+						Mitra terpercaya Anda untuk perawatan otomotif
+						komprehensif sejak 1999
 					</p>
 				</div>
 			</section>
@@ -89,30 +89,17 @@ export default function About() {
 			<section className="about-intro">
 				<div className="container">
 					<div className="intro-content">
-						<h2>Car Service</h2>
-						<p>
-							The largest car body repair, paint, and engine
-							service center. Established since 2002, we service
-							and accept all types of services and all car brands.
-						</p>
-						<p>
-							Prioritizing customer satisfaction, speed, and
-							quality. Supported by competent technicians, modern
-							equipment, and additional services such as 24-hour
-							towing, home service, car detailing, and spare
-							parts.
-						</p>
-						<p>
-							Trusted by renowned insurance companies, major
-							corporations and government institutions, and now
-							serving non-insured vehicles as well.
-						</p>
+						<img
+							className="hero-slide-media"
+							src={`${import.meta.env.BASE_URL}makna-logo.jpg`}
+							alt="Makna Logo"
+						/>
 					</div>
 				</div>
 			</section>
 
 			{/* Vision & Mission */}
-			<section className="vision-mission">
+			{/* <section className="vision-mission">
 				<div className="container">
 					<div className="vm-grid">
 						<div className="vm-card vision">
@@ -145,10 +132,10 @@ export default function About() {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>*/}
 
 			{/* Highlights Section */}
-			<section className="highlights">
+			{/* <section className="highlights">
 				<div className="container">
 					<h2 className="section-title">Why We're Different</h2>
 					<div className="highlights-grid">
@@ -163,7 +150,7 @@ export default function About() {
 						))}
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			{/* FAQ Section */}
 			<section className="faq-section">

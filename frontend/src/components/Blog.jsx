@@ -29,12 +29,13 @@ export default function Blog() {
 	return (
 		<section className="blog" id="blog">
 			<div className="container">
-				<h2 className="section-title">Latest Articles & Tips</h2>
+				<h2 className="section-title">Artikel Terkini & Tips</h2>
 				<p className="section-subtitle">
-					Stay informed with our car maintenance tips and guides
+					<b>COMING SOON:</b> Tips & Artikel Terkini seputar otomotif,
+					perawatan kendaraan, dan layanan Bandar Pelumas
 				</p>
 
-				<div className="blog-grid">
+				{/* <div className="blog-grid">
 					{blogPosts.map((post) => (
 						<article key={post.id} className="blog-card">
 							<div className="blog-header">
@@ -52,7 +53,7 @@ export default function Blog() {
 							</a>
 						</article>
 					))}
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);

@@ -4,42 +4,42 @@ const services = [
 		icon: "🔧",
 		title: "Body Repair",
 		description:
-			"Professional body repair from minor scratches to severe damage with precision results.",
+			"Profesional perbaikan bodi mobil dari goresan ringan hingga kerusakan parah dengan hasil presisi.",
 	},
 	{
 		id: 2,
 		icon: "⚙️",
-		title: "Engine Service",
+		title: "Marketplace",
 		description:
-			"Complete engine maintenance and repair to keep your vehicle running smoothly and safely.",
+			"Jelajahi berbagai produk dan layanan otomotif kami di marketplace online.",
 	},
 	{
 		id: 3,
 		icon: "✨",
-		title: "Detailing",
+		title: "Coating & Detailing",
 		description:
-			"Interior and exterior detailing service to restore your car to pristine condition.",
+			"Layanan detailing interior dan eksterior untuk mengembalikan mobil Anda ke kondisi prima.",
 	},
 	{
 		id: 4,
-		icon: "🚘",
-		title: "Ford Specialist",
+		icon: "❄️",
+		title: "Spesialis AC",
 		description:
-			"Expert Ford service with experienced technicians and genuine spare parts.",
+			"Layanan perawatan dan perbaikan AC dengan teknisi berpengalaman dan suku cadang asli.",
 	},
 	{
 		id: 5,
-		icon: "❄️",
-		title: "AC Service",
+		icon: "🛞",
+		title: "Spooring & Balancing",
 		description:
-			"Air conditioning maintenance and repair for optimal cooling performance.",
+			"Layanan spooring dan balancing untuk memastikan keselarasan ban yang optimal dan stabilitas kendaraan.",
 	},
 	{
 		id: 6,
-		icon: "🔌",
-		title: "Electrical Service",
+		icon: "⚙️",
+		title: "Paket Servis",
 		description:
-			"Electrical system diagnosis and repair for all vehicle types and models.",
+			"Paket layanan komprehensif untuk perawatan dan pemeliharaan rutin kendaraan Anda.",
 	},
 ];
 
@@ -47,10 +47,7 @@ export default function Services() {
 	return (
 		<section className="services" id="services">
 			<div className="container">
-				<h2 className="section-title">Our Services</h2>
-				<p className="section-subtitle">
-					Complete car maintenance solutions available at one location
-				</p>
+				<h2 className="section-title">Layanan Kami</h2>
 
 				<div className="services-grid">
 					{services.map((service) => (

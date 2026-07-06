@@ -6,7 +6,7 @@ export default function Footer() {
 	return (
 		<footer className="footer" id="contact">
 			<div className="container">
-				<div className="footer-content">
+				{/* <div className="footer-content">
 					<div className="footer-section">
 						<h3>Car Service</h3>
 						<p>
@@ -105,7 +105,7 @@ export default function Footer() {
 						<p>📧 bpsejahteraabadi@gmail.com</p>
 						<p>🕒 Mon - Sun: 8:00 AM - 5:00 PM</p>
 					</div>
-				</div>
+				</div> */}
 
 				<div className="footer-bottom">
 					<p>&copy; {currentYear} BPSA. All Rights Reserved.</p>
