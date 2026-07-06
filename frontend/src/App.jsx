@@ -22,7 +22,7 @@ export default function App() {
 						element={<About />}
 					/>
 					<Route
-						path={`${import.meta.env.BASE_URL}spareparts`}
+						path={`${import.meta.env.BASE_URL}marketplace`}
 						element={<Spareparts />}
 					/>
 					<Route
