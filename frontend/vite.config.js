@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
 		proxy: {
 			"/api": {
 				// Forward /api/* requests to the Express backend on port 3000
-				target: "https://bandarpelumas-webservices-backend.vercel.app:3000",
+				target: "https://bandarpelumas-webservices-backend.vercel.app",
 				changeOrigin: true,
 				secure: false,
 				// Strip /api prefix before forwarding: /api → /
