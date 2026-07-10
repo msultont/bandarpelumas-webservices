@@ -8,12 +8,12 @@
 
 ### Frontend Pages
 
-| Route         | Page                           | Description                                                             |
-| ------------- | ------------------------------ | ----------------------------------------------------------------------- |
-| `/`           | [Home](#home-page)             | Landing page — hero, statistics, services, features, testimonials, blog |
-| `/about`      | [About](#about-page)           | Company profile — vision, mission, highlights, FAQs                     |
-| `/spareparts` | [Spareparts](#spareparts-page) | Product catalog and marketplace — browse, search, filter, and order     |
-| `/contact`    | [Contact](#contact-page)       | Contact form, location map, business hours, WhatsApp integration        |
+| Route         | Page                           | Description                                                            |
+| ------------- | ------------------------------ | ---------------------------------------------------------------------- |
+| `/`           | [Home](#home-page)             | Landing page — hero, statistics, services, features, testimonials, FAQ |
+| `/about`      | [About](#about-page)           | Company profile — vision, mission, highlights, FAQs                    |
+| `/spareparts` | [Spareparts](#spareparts-page) | Product catalog and marketplace — browse, search, filter, and order    |
+| `/contact`    | [Contact](#contact-page)       | Contact form, location map, business hours, WhatsApp integration       |
 
 ### Backend API Endpoints
 
@@ -166,7 +166,7 @@ The Home page (`/`) is the entry point of the platform. It introduces visitors t
 3. **Services** — Cards summarizing the three core service categories: lubricants, spare parts, and automotive services.
 4. **Features** — A "Why Choose Us" section covering competitive advantages such as product authenticity, competitive pricing, and fast delivery.
 5. **Testimonials** — Real customer reviews to build trust with new visitors.
-6. **Blog** — A preview of recent articles covering automotive tips and product guides.
+6. **FAQ** — .
 
 #### About Page
 
@@ -239,7 +239,7 @@ bandarpelumas-webservices/
 │   │   │   ├── Services.jsx        # Service category cards
 │   │   │   ├── Features.jsx        # Competitive advantage section
 │   │   │   ├── Testimonials.jsx    # Customer reviews
-│   │   │   ├── Blog.jsx            # Article previews
+│   │   │   ├── FAQ.jsx            # Article previews
 │   │   │   ├── Footer.jsx          # Site footer
 │   │   │   └── ScrollToTop.jsx     # Scroll restoration utility
 │   │   ├── lib/

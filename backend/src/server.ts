@@ -1,6 +1,6 @@
 import { app } from "./app";
 
-const port: number = 3000;
+const port: number = 5555;
 const host: string = "0.0.0.0";
 
 app.listen(port, host, () => {
